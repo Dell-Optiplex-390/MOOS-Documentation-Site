@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOOS Developement Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dropdown.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">Wiki
+            <i class="fa fa-caret-down"></i>
+
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Home</a>
+            <a href="test.html">ISO Wiki</a>
+            <a href="#">Development Wiki</a>
+            <a href="#">Software Development Wiki</a>
+        </div>
+        <a href="MOOS.html">MOOS</a>
+        <a href="developers.html">Developers</a>
+        <a href="">Contact</a>
+    </div>
+
+    <div class="main">
+        <h2>Booting MOOS on real hardware</h2>
+        <p>Now that you've built MOOS in Visual Studio 2022, we can now proceed to boot MOOS on real hardware and get a
+            big boost in performance rather than running everything on a virtual machine. Of course there may be some
+            limitations to this mainly driver related issues, for example USB Drivers, Graphical Glitches, Kernel Panics
+            and etc...</p>
+        <h3>Tested Hardware</h3>
+
+        <table style="width:100%">
+            <tr>
+                <th>Computer/Laptop Name</th>
+                <th>Status for working or failure</th>
+                <th>Date Passed</th>
+            </tr>
+            <tr>
+                <td>Dell Optiplex 390</td>
+                <td>Worked</td>
+                <td>Fri, 14th October</td>
+            </tr>
+            <tr>
+                <td>Lenovo ThinkStation P150</td>
+                <td>Worked</td>
+                <td>Thu, 13th October</td>
+            </tr>
+            <tr>
+                <td>Dell Optiplex 3010</td>
+                <td>Worked</td>
+                <td>Thu, 13th October</td>
+            </tr>
+            <tr>
+                <td>Asus X515 Laptop</td>
+                <td>Failed to boot(BIOS Related Issues)</td>
+                <td>Thu, 13th October</td>
+            </tr>
+            <tr>
+                <td>HP 11-ak0027na Laptop</td>
+                <td>Failed to boot(GRUB denied to display anything on boot)</td>
+                <td>Fri, 14th October</td>
+            </tr>
+            <tr>
+                <td>ACER Aspire 1 Laptop</td>
+                <td>Failed to boot(BIOS Related Issues)</td>
+                <td>Fri, 14th October</td>
+            </tr>
+            <tr>
+                <td>Dell Optiplex GX520</td>
+                <td>Worked</td>
+                <td>Thu, 13th October</td>
+            </tr>
+            <tr>
+
+            </tr>
+        </table>
+
+        <h3>Guide</h3>
+        <h4>Step 1</h4>
+        <p>To start testing MOOS on real hardware we will need to flash the MOOS iso or image onto any USB with at least 4GB or over, we advise getting something like <a href="https://amzn.eu/d/0ytkHMJ">this</a>. If you have a USB already, we can begin. Next we will need a tool called <a href="https://rufus.ie/en/">Rufus which can be downloaded by clicking here</a>, once you download it select your USB in the dropdown menu on Rufus</p>
+        <img src="images/rufus1.png" alt="">
+        <h4>Step 2</h4>
+        <p>Once you've selected the USB on Rufus, you then want to locate the MOOS ISO, the ISO is located in the bin folder of the root of your MOOS Source Code, if you not have it that means you have not compiled MOOS, <a href="">click here to learn how to build MOOS</a>, in the bin folder, then in the image below you want to go to the folders in the tabbar until you find the file "MOOS.iso"</p>
+        <img src="images/rufus2.png" alt="">
+        <h4>Step 3</h4>
+        <p>Now that we've located the MOOS Image, drag the MOOS Image to the rufus app, once done make sure Parition Scheme is set to MBR and Target System is set to BIOS(or UEFI-CSM), once done make sure the File System is set to FAT32, if you do not set the File System to FAT32 your BIOS may not recognise the USB, once your ready press "START"</p>
+        <img src="images/rufus3.png" alt="">
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
