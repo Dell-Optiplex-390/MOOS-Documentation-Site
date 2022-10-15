@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOOS Developement Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dropdown.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">Wiki
+            <i class="fa fa-caret-down"></i>
+            
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Home</a>
+            <a href="moos.html">ISO Wiki</a>
+            <a href="#">Development Wiki</a>
+            <a href="#">Software Development Wiki</a>
+        </div>
+        <a href="moos.html">MOOS</a>
+        <a href="developers.html">Developers</a>
+        <a href="social.html">Socials</a>
+    </div>
+
+    <div class="main">
+        <h2>ISO Content</h2>
+        <p>Welcome to the ISO Content Page, here you will learn the contents of the MOOS ISO and how each file play's it's role within the MOOS OS</p>
+        <h3>Root ISO</h3>
+        <p>In the image below you can see we are in the MOOS ISO, if you want to enter the MOOS ISO <a href="realhardware.html">I'd recommend you take a read about Step 2 on this page</a>, once you find the ISO double click it and your in!</p>
+        <img src="images/isocontent.png" alt="">
+        <p>Let's take a look at the picture above, we have 1 folder and 1 file, <b>boot.catalog</b>, which is the file, doesn't contain much to go through, next we have the boot folder, this is the main item which allows MOOS to boot.</p>
+        <img src="images/isocon.png" alt="">
+        <p>In the image above we can see the content inside the boot folder, we have a file called "ramdisk.tar", ramdisk.tar contains all the file system where the applications, images and all sorts of items MOOS uses to run. We also have "kernel.bin" which as you may have guessed it contains the kernel for our OS</p>
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

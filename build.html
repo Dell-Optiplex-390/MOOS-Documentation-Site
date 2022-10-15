@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOOS Developement Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dropdown.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">Wiki
+            <i class="fa fa-caret-down"></i>
+
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Home</a>
+            <a href="moos.html">ISO Wiki</a>
+            <a href="#">Development Wiki</a>
+            <a href="#">Software Development Wiki</a>
+        </div>
+        <a href="moos.html">MOOS</a>
+        <a href="developers.html">Developers</a>
+        <a href="">Contact</a>
+    </div>
+
+    <div class="main">
+        <h2>Virtualising MOOS in a Virtual Machine(VM)</h2>
+        <p>If you want to run MOOS in a virtual machine read on. Using a virtual machine(VM) for MOOS does have it's
+            up's and down's, for example MOOS in a VM can save time especially for developers, and there is a high
+            chance of drivers and all sorts of bits and bobs to work, a downside could be it requires a tad bit of
+            computing power and it may be a bit slow and laggy. But anyways lets start!</p>
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;  
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

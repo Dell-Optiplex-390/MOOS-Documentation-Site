@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOOS Developement Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dropdown.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">Wiki
+            <i class="fa fa-caret-down"></i>
+            
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Home</a>
+            <a href="moos.html">ISO Wiki</a>
+            <a href="#">Development Wiki</a>
+            <a href="#">Software Development Wiki</a>
+        </div>
+        <a href="moos.html">MOOS</a>
+        <a href="developers.html">Developers</a>
+        <a href="social.html">Socials</a>
+    </div>
+
+    <div class="main">
+        <h2>ISO Wiki</h2>
+        <p>Welcome to the socials page, here you will find all the MOOS contributors and developers here, feel free to follow or subscribe to any of the members of the team :)</p>
+        <img src="images/devrusty.jpeg" alt=""
+        width="200px"
+        height="200px"
+        class="devrusty">
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

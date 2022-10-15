@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOOS Developement Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dropdown.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">Wiki
+            <i class="fa fa-caret-down"></i>
+            
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Home</a>
+            <a href="moos.html">ISO Wiki</a>
+            <a href="#">Development Wiki</a>
+            <a href="#">Software Development Wiki</a>
+        </div>
+        <a href="moos.html">MOOS</a>
+        <a href="developers.html">Developers</a>
+        <a href="social.html">Socials</a>
+    </div>
+
+    <div class="main">
+        <h2>ISO Wiki</h2>
+        <p>Welcome to the ISO Wiki, here you will learn how to setup the ISO, and how the ISO works, not only that but we will also learn how to boot MOOS on <b>real hardware</b> and virtualise it, it any Virtual Machine Software.</p>
+        <h3>Chapters</h3>
+        <ul>
+            <li>Building MOOS in Windows: <a href="">here</a></li>
+            <li>Virtualising MOOS in a VM: <a href="vm.html">here</a></li>
+            <li>Explaining what the items in the ISO do: <a href="isocontent.html">here</a></li>
+            <li>Booting on real hardware: <a href="realhardware.html">here</a></li>
+            <li>How to add files into the file system(FS) <a href="">here</a></li>
+        </ul>
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

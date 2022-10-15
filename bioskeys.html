@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOOS Developement Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/dropdown.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">Wiki
+            <i class="fa fa-caret-down"></i>
+
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Home</a>
+            <a href="moos.html">ISO Wiki</a>
+            <a href="#">Development Wiki</a>
+            <a href="#">Software Development Wiki</a>
+        </div>
+        <a href="moos.html">MOOS</a>
+        <a href="developers.html">Developers</a>
+        <a href="">Contact</a>
+    </div>
+
+    <div class="main">
+        <h2>Booting MOOS on real hardware</h2>
+        <p>Now that you've built MOOS in Visual Studio 2022, we can now proceed to boot MOOS on real hardware and get a
+            big boost in performance rather than running everything on a virtual machine. Of course there may be some
+            limitations to this mainly driver related issues, for example USB Drivers, Graphical Glitches, Kernel Panics
+            and etc...</p>
+        <h3>Tested Hardware</h3>
+
+        <table style="width:100%">
+            <tr>
+                <th>Computer/Laptop manafacturer</th>
+                <th>BIOS Key</th>
+                <th>Boot Menu Key</th>
+                <th>Date Passed</th>
+            </tr>
+            <tr>
+                <td>Dell</td>
+                <td>F2</td>
+                <td>F12</td>
+                <td>Fri, 14th October</td>
+            </tr>
+            <tr>
+                <td>Lenovo</td>
+                <td>F2</td>
+                <td>F12</td>
+                <td>Thu, 13th October</td>
+            </tr>
+            <tr>
+                <td>HP</td>
+                <td>F10</td>
+                <td>F2 or F6 depends on the model</td>
+                <td>Wed, 12th October</td>
+            </tr>
+            <tr>
+                <td>Asus</td>
+                <td>F2</td>
+                <td>Escape Key</td>
+                <td>Sat, 14th October</td>
+            </tr>
+            <tr>
+                <td>Acer</td>
+                <td>F2 or Delete</td>
+                <td>F12, F8, F10</td>
+                <td>Fri, 14th October</td>
+            </tr>
+            <tr>
+                <td>Samsung for poor people</td>
+                <td>F2</td>
+                <td>F10</td>
+                <td>Fri, 14th October</td>
+            </tr>
+            <tr>
+                <td>Beelink</td>
+                <td>Delete Key</td>
+                <td>F7</td>
+                <td>Thu, 13th October</td>
+            </tr>
+        </table>
+            <h3>Motherboard Keys</h3>
+            <table style="width:100%">
+                <tr>
+                    <th>Motherboard manafacturer</th>
+                    <th>BIOS Key</th>
+                    <th>Boot Menu Key</th>
+                    <th>Date Passed</th>
+                </tr>
+                <tr>
+                    <td>Gigabyte</td>
+                    <td>Delete key</td>
+                    <td>F12</td>
+                    <td>Wed, 20th July</td>
+                </tr>
+                <tr>
+                    <td>Foxconn</td>
+                    <td>Delete Key</td>
+                    <td>Escape Key</td>
+                    <td>Thu, 13th October</td>
+                </tr>
+                <tr>
+                    <td>MSI</td>
+                    <td>F9</td>
+                    <td>F11</td>
+                    <td>Wed, 12th October</td>
+                </tr>
+                <tr>
+                    <td>ASRock</td>
+                    <td>F2</td>
+                    <td>F8, F11</td>
+                    <td>Sat, 14th October</td>
+                </tr>
+                <tr>
+                    <td>Intel</td>
+                    <td>F2</td>
+                    <td>F10</td>
+                    <td>Fri, 14th October</td>
+                </tr>
+            </table>
+        </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
